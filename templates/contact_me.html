@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Contact Me</h2>
+
+  <form method="POST" novalidate>
+    {{ form.hidden_tag() }}
+
+    <!-- Name -->
+    <div class="mb-3">
+      {{ form.name.label(class="form-label") }}
+      {{ form.name(class="form-control", placeholder="Your Name") }}
+      {% for error in form.name.errors %}
+        <div class="text-danger small">{{ error }}</div>
+      {% endfor %}
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      {{ form.email.label(class="form-label") }}
+      {{ form.email(class="form-control", placeholder="your@email.com") }}
+      {% for error in form.email.errors %}
+        <div class="text-danger small">{{ error }}</div>
+      {% endfor %}
+    </div>
+
+    <!-- Subject -->
+    <div class="mb-3">
+      {{ form.subject.label(class="form-label") }}
+      {{ form.subject(class="form-control", placeholder="Subject (optional)") }}
+      {% for error in form.subject.errors %}
+        <div class="text-danger small">{{ error }}</div>
+      {% endfor %}
+    </div>
+
+    <!-- Message -->
+    <div class="mb-3">
+      {{ form.message.label(class="form-label") }}
+      {{ form.message(class="form-control", rows="5", placeholder="Your message...") }}
+      {% for error in form.message.errors %}
+        <div class="text-danger small">{{ error }}</div>
+      {% endfor %}
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+      {{ form.submit(class="btn btn-primary px-5") }}
+    </div>
+
+  </form>
+</div>
+{% endblock %}
