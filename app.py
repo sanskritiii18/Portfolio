@@ -4,7 +4,7 @@ from flask import Flask,render_template,flash,redirect,url_for
 from forms import ContactMeForm
 
 app=Flask(__name__)
-app.config['SECRET_KEY'] = b'46SAUCY4002'  # use b'' or os.urandom
+
 
 
 
