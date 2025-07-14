@@ -1,9 +1,6 @@
-from crypt import methods
-from pyexpat.errors import messages
 from flask import Flask, render_template, flash, redirect, url_for,session
 from flask_mail import Mail, Message
 from werkzeug.utils import redirect
-from wtforms.validators import email
 import json
 from forms import ContactMeForm
 import os
