@@ -6,11 +6,39 @@ from forms import ContactMeForm
 import os
 from dotenv import load_dotenv
 from flask_talisman import Talisman
-
-
 app=Flask(__name__)
+csp = {
+    'default-src': [
+        '\'self\''
+    ],
+    'style-src': [
+        '\'self\'',
+        'https://cdn.jsdelivr.net',
+        'https://cdnjs.cloudflare.com',
+        'https://fonts.googleapis.com',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0',
+    ],
+    'script-src': [
+        '\'self\'',
+        'https://cdn.jsdelivr.net',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0',
+        'https://cdnjs.cloudflare.com'
+    ],
+    'font-src': [
+        '\'self\'',
+        'https://cdnjs.cloudflare.com',
+        'https://cdn.jsdelivr.net',
+        'https://fonts.gstatic.com'
+    ]
+}
+
+Talisman(app, content_security_policy=csp)
+
+
+
+
 mail=Mail(app)
-Talisman(app)
+
 
 load_dotenv()
 
@@ -81,5 +109,5 @@ def server_error(e):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, port=5001)
 
