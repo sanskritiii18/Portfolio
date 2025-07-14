@@ -46,13 +46,18 @@
         <h4 class="text-secondary">Python Developer</h4>
 
 
-        <div class="d-flex flex-wrap gap-3 mt-3 justify-content-center justify-content-md-start">
-          <a href="{{ url_for('static',filename='Sanskriti_verma.pdf') }}" target="_blank" class="btn btn-outline-dark mt-3">
-  📄 Download Resume
-</a>
+      <div class="d-flex flex-wrap gap-3 mt-3 justify-content-center justify-content-md-start">
+  <a href="{{ url_for('static', filename='Sanskriti_verma.pdf') }}"
+     download
+     class="btn btn-dark btn-lg">
+    Download Resume
+  </a>
 
-          <a href="{{ url_for('contact_me_page') }}" class="btn btn-dark btn-lg">Contact Me</a>
-        </div>
+  <a href="{{ url_for('contact_me_page') }}" class="btn btn-dark btn-lg">
+    Contact Me
+  </a>
+</div>
+
 
         <!-- Social icons -->
         <div class="mt-4 d-flex gap-4 justify-content-center justify-content-md-start fs-3">

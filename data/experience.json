@@ -1,0 +1,22 @@
+[
+  {
+    "organization": "C-DAC, Pune",
+    "role": "Applied AI Intern",
+    "duration": "March 2025 – Present",
+    "technologies": ["NLP", "Deep Learning"],
+    "confidential": true
+  },
+  {
+    "organization": "Desktop Buddha",
+    "role": "Python Developer Intern",
+    "duration": "Jan 2025 – Feb 2025",
+    "technologies": ["Python", "Streamlit", "PostgreSQL", "Google OAuth2.0", "Pytest", "Selenium", "Git", "Jira"],
+    "responsibilities": [
+                "Developed core features using Streamlit and PostgreSQL",
+                "Implemented Google OAuth2.0 authentication",
+                "Built a feedback survey system with admin dashboard",
+                "Conducted testing using Pytest and Selenium",
+                "Participated in Agile sprints using Jira Scrum"
+            ]
+  }
+]
