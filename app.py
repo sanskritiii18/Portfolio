@@ -6,7 +6,10 @@ from forms import ContactMeForm
 import os
 from dotenv import load_dotenv
 from flask_talisman import Talisman
+load_dotenv()
 app=Flask(__name__)
+
+
 csp = {
     'default-src': [
         '\'self\''
@@ -37,20 +40,17 @@ Talisman(app, content_security_policy=csp)
 
 
 
-mail=Mail(app)
-
-
-load_dotenv()
-
 app.config['SECRET_KEY']=os.getenv('SECRET_KEY')
 app.config['MAIL_USERNAME'] = os.getenv("MAIL_USERNAME")
 app.config['MAIL_PASSWORD'] = os.getenv("MAIL_PASSWORD")
 app.config['MAIL_SERVER'] = os.getenv("MAIL_SERVER")
-app.config['MAIL_PORT'] = int(os.getenv("MAIL_PORT"))
-app.config['MAIL_USE_TLS'] = os.getenv("MAIL_USE_TLS") == 'True'
+app.config['MAIL_PORT'] = os.getenv("MAIL_PORT")
+app.config['MAIL_USE_TLS'] =os.getenv("MAIL_USE_TLS")
 app.config['MAIL_DEFAULT_SENDER'] = os.getenv("MAIL_DEFAULT_SENDER")
+app.config['MAIL_DEBUG'] = True
 
 
+mail=Mail(app)
 
 
 
