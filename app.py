@@ -86,7 +86,8 @@ def handle_contact():
 
         try:
             mail.send(msg)
-            return jsonify({'success': True, 'message': 'Thank you for your message!'})
+            return jsonify(success=True, title="Thank you for your message!", detail="I'll get back to you soon.")
+
         except Exception as e:
             return jsonify({'success': False, 'message': 'Sorry, there was an error sending your message.'})
 
